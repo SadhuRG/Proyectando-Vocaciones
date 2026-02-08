@@ -1,0 +1,140 @@
+*:root {
+  padding: 0rem; /* MARGEN SUPERIOR E INFERIOR DE 1REM */
+  --primary-purple: #6A1B9A;
+  --primary-yellow: #FBC02D;
+  --gradient-bg: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-yellow) 100%);
+}
+/* =========================================
+   HEADER & CONTENEDOR PRINCIPAL
+   ========================================= */
+header {
+  padding: 1rem 0;
+  background: var(--gradient-bg); /* Mantiene tu gradiente */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2); /* Sombra suave como la referencia */
+}
+
+.container {
+  /* Configuración Flex para alinear todo en una fila */
+  display: flex;
+  align-items: center; 
+  
+  /* ESTO define el ancho máximo y el margen que pediste */
+  width: 100%;
+  max-width: 1920px; /* Igual que tu root */
+  margin: 0 auto;    /* Centra el contenedor en pantallas gigantes */
+  padding: 0 1rem;   /* EL MARGEN LATERAL DE 1REM QUE PEDISTE */
+  box-sizing: border-box;
+}
+
+/* =========================================
+   LOGO (IZQUIERDA)
+   ========================================= */
+.logo-container {
+  display: flex;
+  align-items: center;
+  
+  /* EL TRUCO DE ORO: Empuja todo lo demás a la derecha */
+  margin-right: auto; 
+}
+
+.logo-img {
+  height: 40px; /* Ajusta según tu logo real */
+  width: auto;
+}
+
+/* =========================================
+   NAVEGACIÓN (DERECHA - Junto a los botones)
+   ========================================= */
+.nav-links {
+  display: flex;
+  gap: 1.5rem; /* Espacio entre los links de texto */
+  align-items: center;
+  margin-right: 2rem; /* Separación entre el Nav y los Botones de acción */
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white; /* Texto blanco limpio como la imagen */
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: opacity 0.2s;
+  white-space: nowrap;
+}
+
+.nav-links a:hover {
+  opacity: 0.8; /* Efecto sutil al pasar el mouse */
+  color: var(--primary-yellow); /* Tu color de acento */
+}
+
+/* =========================================
+   ACCIONES (Select + Botón Inscríbete)
+   ========================================= */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Select estilo minimalista (como el dropdown de la foto) */
+.edition-select {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.edition-select option {
+  background: #000;
+  color: white;
+}
+
+/* Hamburguesa para móvil */
+.hamburger {
+  display: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: 1rem;
+}
+
+/* =========================================
+   RESPONSIVE (Móvil/Tablet)
+   ========================================= */
+@media (max-width: 1024px) {
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #000; /* Fondo oscuro para el menú móvil */
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 0;
+    gap: 1.5rem;
+    margin-right: 0; /* Reseteamos el margen en móvil */
+    
+    /* Ocultar/Mostrar lógica */
+    display: none;
+  }
+
+  .nav-links.active {
+    display: flex;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .hamburger {
+    display: block;
+  }
+  
+  /* Opcional: Ocultar el botón o select en móvil si no caben */
+  .edition-select {
+    display: none; 
+  }
+}

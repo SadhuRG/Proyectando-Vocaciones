@@ -1,0 +1,58 @@
+{
+  "3.0": {
+    "areaA": [
+      {
+        "nombre": "Biología Pesquera",
+        "descripcion": "Investigar, evaluar y gestionar los recursos hidrobiológicos...",
+        "perfil": "Interés científico, conciencia ecológica...",
+        "imagen": "/assets/images/biologia-pesquera.jpg"
+      }
+    ],
+    "areaB": [
+      {
+        "nombre": "Ingeniería de Software",
+        "descripcion": "Diseñar, desarrollar y mantener sistemas de software...",
+        "perfil": "Pensamiento lógico, habilidades de programación...",
+        "imagen": "/assets/images/ingenieria-software.jpg"
+      }
+    ]
+  },
+
+  "2.0": {
+    "areaA": [
+      {
+        "nombre": "Biología Pesquera",
+        "descripcion": "Investigar, evaluar y gestionar los recursos hidrobiológicos...",
+        "perfil": "Interés científico, conciencia ecológica...",
+        "imagen": "/assets/images/biologia-pesquera.jpg"
+      }
+    ],
+    "areaB": [
+      {
+        "nombre": "Ingeniería de Software",
+        "descripcion": "Diseñar, desarrollar y mantener sistemas de software...",
+        "perfil": "Pensamiento lógico, habilidades de programación...",
+        "imagen": "/assets/images/ingenieria-software.jpg"
+      }
+    ]
+  },
+  
+  "1.0": {
+    "areaA": [
+      {
+        "nombre": "Biología Pesquera",
+        "descripcion": "Investigar, evaluar y gestionar los recursos hidrobiológicos...",
+        "perfil": "Interés científico, conciencia ecológica...",
+        "imagen": "/assets/images/biologia-pesquera.jpg"
+      }
+    ],
+    "areaB": [
+      {
+        "nombre": "Ingeniería de Software",
+        "descripcion": "Diseñar, desarrollar y mantener sistemas de software...",
+        "perfil": "Pensamiento lógico, habilidades de programación...",
+        "imagen": "/assets/images/ingenieria-software.jpg"
+      }
+    ]
+  }
+}

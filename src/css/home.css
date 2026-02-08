@@ -1,0 +1,101 @@
+.home-section {
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  background: var(--gradient-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+}
+
+.home-content {
+  font-size: 3.5rem;
+  font-weight: bold, 800;
+  color: white;
+  margin-top: 1rem;
+  line-height: 1.2;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.highlight {
+  color: var(--primary-yellow);
+  display: inline-block;
+}
+
+.subtitle {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 100%;
+  margin-top: 0 auto 2.5rem;
+  font-weight: 400;
+}
+
+.home-buttons {
+  display: flex;
+  margin-top: 2.5rem;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+.btn-primary {
+  background: white;
+  color: var(--primary-purple);
+  border: 2px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  background-color: var(--primary-yellow);
+  border-color: var(--primary-purple)
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-3px);
+}
+
+/* 6. RESPONSIVE (Para celulares) */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2.5rem; /* Título más pequeño en móvil */
+  }
+  
+  .subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column; /* Botones uno encima del otro en móvil */
+    width: 100%;
+  }
+  
+  .btn {
+    width: 100%; /* Botones anchos en móvil para tocar fácil */
+    text-align: center;
+  }
+}
+  

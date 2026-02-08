@@ -1,0 +1,36 @@
+{
+  "3.0": {
+    "titulo": "Proyectando Vocaciones 3.0",
+    "fecha": "Sábado 28 de Febrero, 2026",
+    "duracion": "8:30 am - 1:45 pm",
+    "lugar": "Universidad Nacional de Trujillo",
+    "cronograma": {
+      "general": [
+        { "hora": "8:30 am - 9:45 am", "actividad": "Recorrido por la UNT" },
+        { "hora": "8:50 am - 10:30 am", "actividad": "Feria vocacional" },
+        { "hora": "10:30 am - 11:00 am", "actividad": "Pausa para refrigerio" },
+        { "hora": "11:00 am - 12:30 pm", "actividad": "Conferencias magistrales" },
+        { "hora": "12:30 pm - 1:45 pm", "actividad": "Almuerzo y cierre" }
+      ],
+      "medicina": [
+        { "hora": "8:30 am - 9:45 am", "actividad": "Recorrido por la Facultad de Medicina" },
+        { "hora": "8:50 am - 10:30 am", "actividad": "Feria vocacional en Medicina" },
+        { "hora": "10:30 am - 11:00 am", "actividad": "Pausa para refrigerio" },
+        { "hora": "11:00 am - 12:30 pm", "actividad": "Conferencias magistrales en Medicina" },
+        { "hora": "12:30 pm - 1:45 pm", "actividad": "Almuerzo y cierre en Medicina" }
+      ]
+    },
+    "mision": "Trabajamos juntos para transformar nuestra comunidad mediante proyectos con impacto social.",
+    "vision": "Ser el modelo de excelencia en la gestión de proyectos sociales."
+  },
+  "2.0": {
+    "titulo": "Proyectando Vocaciones 2.0",
+    "fecha": "Sábado 29 de Febrero, 2025",
+    "duracion": "8:30 am - 1:45 pm"
+  },
+  "1.0": {
+    "titulo": "Proyectando Vocaciones 1.0",
+    "fecha": "Sábado 28 de Febrero, 2024",
+    "duracion": "8:30 am - 1:45 pm"
+  }
+}
