@@ -1,8 +1,7 @@
-@import "tailwindcss";
 :root {
   --primary-purple: #6A1B9A;
   --primary-yellow: #FBC02D;
-  --gradient-bg: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-yellow) 100%);
+  --gradient-bg: linear-gradient(135deg, var(--primary-purple) 30%, var(--primary-yellow) 100%);
 }
 
 body {

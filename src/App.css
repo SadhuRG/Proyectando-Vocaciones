@@ -2,14 +2,13 @@
   padding: 0rem; /* MARGEN SUPERIOR E INFERIOR DE 1REM */
   --primary-purple: #6A1B9A;
   --primary-yellow: #FBC02D;
-  --gradient-bg: linear-gradient(135deg, var(--primary-purple) 0%, var(--primary-yellow) 100%);
 }
 /* =========================================
    HEADER & CONTENEDOR PRINCIPAL
    ========================================= */
 header {
   padding: 1rem 0;
-  background: var(--gradient-bg); /* Mantiene tu gradiente */
+  background: #E1D5F9;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -58,7 +57,7 @@ header {
 
 .nav-links a {
   text-decoration: none;
-  color: white; /* Texto blanco limpio como la imagen */
+  color: #655C8A; /* Texto blanco limpio como la imagen */
   font-weight: 500;
   font-size: 0.95rem;
   transition: opacity 0.2s;
@@ -82,8 +81,8 @@ header {
 /* Select estilo minimalista (como el dropdown de la foto) */
 .edition-select {
   background: transparent;
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #655C8A;
+  border: 1px solid rgba(101, 92, 138, 1);
   padding: 0.4rem 0.8rem;
   border-radius: 4px;
   font-size: 0.9rem;

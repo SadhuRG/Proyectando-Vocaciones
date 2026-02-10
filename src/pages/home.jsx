@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <main>
       {/* Sección Landing */}
-      <section id="home" className="home-section">
+      <section id="home" className="home-section bg-purple-800">
         <div className='home-content'> 
           <h1>Proyectando <span className='highlight'>Vocaciones 3.0</span></h1>
           <p className='subtitle'>¡Un paso firme hacia tu futuro profesional!</p>
@@ -21,7 +21,7 @@ const Home = () => {
       </section>
 
       {/* Sección Quiénes Somos */}
-      <section id="quienes-somos" className='home-section'>
+      <section id="quienes-somos" className='home-section bg-purple-200'>
         <div className='home-content'>
           <h2>¿Quiénes Somos?</h2>
           <p className='subtitle-QS-text'>

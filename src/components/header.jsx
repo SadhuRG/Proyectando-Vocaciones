@@ -49,11 +49,11 @@ const Header = () => {
         <nav className={`nav-links ${isMobileMenuOpen ? 'active' : ''}`}>
           <a href="#home" onClick={handleHomeClick}>Home</a>
           <a href="#quienes-somos" onClick={() => setIsMobileMenuOpen(false)}>Quiénes Somos</a>
-          <a href="#descripcion" onClick={() => setIsMobileMenuOpen(false)}>Descripción</a>
           <a href="#objetivos" onClick={() => setIsMobileMenuOpen(false)}>Objetivos</a>
-          <a href="#publico" onClick={() => setIsMobileMenuOpen(false)}>Público Objetivo</a>
           <a href="#evento" onClick={() => setIsMobileMenuOpen(false)}>Sobre el Evento</a>
+          <a href="#publico" onClick={() => setIsMobileMenuOpen(false)}>Público Objetivo</a>
           <a href="/carreras" onClick={() => setIsMobileMenuOpen(false)}>Carreras</a>
+          <a href="/organizadores" onClick={() => setIsMobileMenuOpen(false)}>Organizadores</a>
           <a href="/galeria" onClick={() => setIsMobileMenuOpen(false)}>Galería</a>
         </nav>
 
