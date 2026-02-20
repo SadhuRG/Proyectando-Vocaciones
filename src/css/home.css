@@ -1,99 +1,396 @@
-.home-section {
+/* =========================================
+   SECCIÓN HERO PRINCIPAL
+   ========================================= */
+.hero-section {
   height: 100vh;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 0 20px;
-    position: relative;
+  padding: 2rem 1.5rem 4rem;
+  position: relative;
+  background: linear-gradient(135deg, #6B1E9A 0%, #8B3FB8 50%, #A855D8 100%);
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-.home-content {
-  font-size: 3.5rem;
-  font-weight: bold, 800;
+/* Círculos decorativos del fondo */
+.bg-circles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(2px);
+}
+
+.circle-1 {
+  width: 300px;
+  height: 300px;
+  top: -100px;
+  left: -50px;
+  background: rgba(251, 192, 45, 0.1);
+}
+
+.circle-2 {
+  width: 200px;
+  height: 200px;
+  top: 10%;
+  right: 5%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.circle-3 {
+  width: 150px;
+  height: 150px;
+  bottom: 15%;
+  left: 10%;
+  background: rgba(251, 192, 45, 0.06);
+}
+
+.circle-4 {
+  width: 250px;
+  height: 250px;
+  bottom: -80px;
+  right: -80px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Contenedor del hero */
+.hero-container {
+  max-width: 1200px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  padding: 0 1rem;
+}
+
+/* Badge de edición */
+.edition-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1.25rem;
+  border-radius: 50px;
   color: white;
-  margin-top: 1rem;
-  line-height: 1.2;
-  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
-.highlight {
-  color: var(--primary-yellow);
+.fire-icon {
+  color: #FBC02D;
+  font-size: 1.1rem;
+  animation: flicker 2s infinite;
+}
+
+@keyframes flicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Título principal */
+.hero-title {
+  font-size: 4.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.title-yellow {
+  color: #FBC02D;
   display: inline-block;
 }
 
-.subtitle {
-  font-size: 1.5rem;
-  color: rgba(255, 255, 255, 0.9);
-  max-width: 100%;
-  margin-top: 0 auto 2.5rem;
-  font-weight: 400;
+.title-white {
+  color: white;
+  display: inline-block;
 }
 
-.home-buttons {
+/* Subtítulo */
+.hero-subtitle {
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.95);
+  max-width: 700px;
+  margin: 0.5rem 0 1.5rem;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+/* Información del evento */
+.event-info {
   display: flex;
-  margin-top: 2.5rem;
-  gap: 1.5rem;
+  gap: 2rem;
   justify-content: center;
   flex-wrap: wrap;
+  margin: 1rem 0 2rem;
+}
+
+.info-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.info-icon {
+  color: #FBC02D;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Botones de acción */
+.hero-buttons {
+  display: flex;
+  gap: 1.25rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
 }
 
 .btn {
-  padding: 0.8rem 2rem;
+  padding: 1rem 2.5rem;
   text-decoration: none;
   border-radius: 50px;
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
   display: inline-block;
+  border: none;
+  font-family: inherit;
 }
+
 .btn-primary {
-  background: white;
-  color: var(--primary-purple);
-  border: 2px solid white;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background: #FBC02D;
+  color: #6A1B9A;
+  border: 2px solid #FBC02D;
+  box-shadow: 0 4px 20px rgba(251, 192, 45, 0.4);
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  background-color: var(--primary-yellow);
-  border-color: var(--primary-purple)
+  box-shadow: 0 8px 30px rgba(251, 192, 45, 0.6);
+  background-color: #F9A825;
 }
 
 .btn-secondary {
-  background-color: transparent;
+  background: transparent;
   color: white;
   border: 2px solid white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .btn-secondary:hover {
-  background-color: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
 }
 
-/* 6. RESPONSIVE (Para celulares) */
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 2.5rem; /* Título más pequeño en móvil */
+/* Indicador de scroll */
+.scroll-indicator {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.scroll-indicator:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateX(-50%) scale(1.05);
+}
+
+.bounce-arrow {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.5rem;
+  animation: bounce 2s infinite;
+  transition: color 0.3s ease;
+}
+
+.scroll-indicator:hover .bounce-arrow {
+  color: #FBC02D;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { 
+    transform: translateY(0); 
+  }
+  40% { 
+    transform: translateY(-10px); 
+  }
+  60% { 
+    transform: translateY(-5px); 
+  }
+}
+
+
+
+/* =========================================
+   RESPONSIVE - TABLET
+   ========================================= */
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 3.5rem;
   }
   
-  .subtitle {
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .event-info {
+    gap: 1.5rem;
+  }
+  
+  .info-item {
+    font-size: 0.95rem;
+  }
+}
+
+/* =========================================
+   RESPONSIVE - MÓVIL
+   ========================================= */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 1.5rem 1rem 3rem;
+    height: 100vh;
+  }
+  
+  .hero-container {
+    gap: 1rem;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
     font-size: 1.1rem;
+    margin: 0.5rem 0 1rem;
+  }
+  
+  .edition-badge {
+    font-size: 0.8rem;
+    padding: 0.4rem 1rem;
+  }
+  
+  .event-info {
+    flex-direction: column;
+    gap: 1rem;
+    margin: 1rem 0 1.5rem;
+  }
+  
+  .info-item {
+    font-size: 0.9rem;
   }
   
   .hero-buttons {
-    flex-direction: column; /* Botones uno encima del otro en móvil */
+    flex-direction: column;
     width: 100%;
+    max-width: 350px;
+    gap: 1rem;
   }
   
   .btn {
-    width: 100%; /* Botones anchos en móvil para tocar fácil */
-    text-align: center;
+    width: 100%;
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
+  
+  .scroll-indicator {
+    bottom: 0.8rem;
+    width: 45px;
+    height: 45px;
+  }
+  
+  .bounce-arrow {
+    font-size: 1.3rem;
+  }
+  
+  .circle-1 {
+    width: 200px;
+    height: 200px;
+  }
+  
+  .circle-2,
+  .circle-3 {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .circle-4 {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section {
+    padding: 1rem 0.75rem 2.5rem;
+  }
+  
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  
+  .event-info {
+    gap: 0.8rem;
+  }
+  
+  .info-item {
+    font-size: 0.85rem;
+  }
+  
+  .info-icon {
+    font-size: 1rem;
+  }
+  
+  .scroll-indicator {
+    bottom: 0.6rem;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .bounce-arrow {
+    font-size: 1.1rem;
   }
 }
   
