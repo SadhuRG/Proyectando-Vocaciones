@@ -7,9 +7,6 @@ import Galeria from './pages/galeria';
 import Edicion from './pages/ediciones';
 import EdicionesHistoria from './pages/edicionesHistoria';
 import Organizadores from './pages/organizadores';
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
