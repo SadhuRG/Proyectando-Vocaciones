@@ -200,6 +200,7 @@
 
 /* ===========================
    GRID DE CONTENIDO
+   — Siempre 2 columnas en desktop
    =========================== */
 
 .edition-grid {
@@ -214,6 +215,7 @@
   display: flex;
   flex-direction: column;
   gap: 50px;
+  min-width: 0; /* evita desbordamiento */
 }
 
 .info-section {
@@ -298,6 +300,70 @@
 }
 
 /* ===========================
+   ALIADOS CARRUSEL
+   =========================== */
+
+.aliados-section {
+  overflow: hidden;
+}
+
+.aliados-track-wrapper {
+  overflow: hidden;
+  width: 100%;
+  mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+.aliados-track {
+  display: flex;
+  gap: 16px;
+  width: max-content;
+  animation: scroll-aliados 20s linear infinite;
+}
+
+.aliados-track:hover {
+  animation-play-state: paused;
+}
+
+.aliado-logo-card {
+  width: 80px;
+  height: 60px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.aliado-logo-card:hover {
+  border-color: #6366f1;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.15);
+  transform: translateY(-2px);
+}
+
+.aliado-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(30%);
+  transition: filter 0.3s ease;
+}
+
+.aliado-logo-card:hover .aliado-logo-img {
+  filter: grayscale(0%);
+}
+
+@keyframes scroll-aliados {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ===========================
    OBJETIVOS
    =========================== */
 
@@ -371,12 +437,13 @@
 }
 
 /* ===========================
-   CARRUSEL DE IMÁGENES
+   CARRUSEL DE IMÁGENES (columna derecha)
    =========================== */
 
 .edition-carousel-column {
   position: sticky;
   top: 100px;
+  min-width: 0; /* evita desbordamiento */
 }
 
 .carousel-container {
@@ -403,7 +470,6 @@
   border-radius: 16px;
 }
 
-/* Botones del carrusel */
 .carousel-button {
   position: absolute;
   top: 50%;
@@ -431,15 +497,9 @@
   transform: translateY(-50%) scale(1.1);
 }
 
-.carousel-button-prev {
-  left: 20px;
-}
+.carousel-button-prev { left: 20px; }
+.carousel-button-next { right: 20px; }
 
-.carousel-button-next {
-  right: 20px;
-}
-
-/* Indicadores */
 .carousel-indicators {
   position: absolute;
   bottom: 20px;
@@ -474,7 +534,6 @@
   border-radius: 5px;
 }
 
-/* Contador */
 .carousel-counter {
   position: absolute;
   top: 20px;
@@ -491,35 +550,7 @@
 }
 
 /* ===========================
-   RESPONSIVE - TABLET
-   =========================== */
-
-@media (max-width: 1024px) {
-  .edition-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .edition-carousel-column {
-    position: relative;
-    top: 0;
-  }
-
-  .carousel-wrapper {
-    height: 500px;
-  }
-
-  .edition-main-title {
-    font-size: 40px;
-  }
-
-  .edition-subtitle {
-    font-size: 28px;
-  }
-}
-
-/* ===========================
-   RESPONSIVE - MOBILE
+   RESPONSIVE — solo aplica en móvil (≤768px)
    =========================== */
 
 @media (max-width: 768px) {
@@ -535,7 +566,18 @@
     margin-bottom: 60px;
   }
 
-  /* TIMELINE VERTICAL */
+  /* Grid en una sola columna */
+  .edition-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .edition-carousel-column {
+    position: relative;
+    top: 0;
+  }
+
+  /* Timeline vertical */
   .timeline-navigation {
     flex-direction: column;
     gap: 40px;
@@ -560,9 +602,7 @@
     gap: 20px;
   }
 
-  .timeline-label {
-    text-align: left;
-  }
+  .timeline-label { text-align: left; }
 
   .timeline-badge {
     top: auto;
@@ -571,74 +611,29 @@
     transform: none;
   }
 
-  /* Content */
-  .edition-main-title {
-    font-size: 32px;
-  }
+  .edition-main-title { font-size: 32px; }
+  .edition-subtitle   { font-size: 24px; }
 
-  .edition-subtitle {
-    font-size: 24px;
-  }
+  .info-section { padding: 24px; }
 
-  .info-section {
-    padding: 24px;
-  }
+  .section-title  { font-size: 20px; }
+  .section-number { width: 40px; height: 40px; font-size: 16px; }
 
-  .section-title {
-    font-size: 20px;
-  }
+  .stats-container { grid-template-columns: 1fr; gap: 12px; }
 
-  .section-number {
-    width: 40px;
-    height: 40px;
-    font-size: 16px;
-  }
+  .carousel-wrapper  { height: 400px; }
+  .carousel-button   { width: 40px; height: 40px; }
+  .carousel-button-prev { left: 10px; }
+  .carousel-button-next { right: 10px; }
 
-  .stats-container {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-
-  .carousel-wrapper {
-    height: 400px;
-  }
-
-  .carousel-button {
-    width: 40px;
-    height: 40px;
-  }
-
-  .carousel-button-prev {
-    left: 10px;
-  }
-
-  .carousel-button-next {
-    right: 10px;
-  }
+  .aliado-logo-card { width: 64px; height: 48px; }
 }
 
 @media (max-width: 480px) {
-  .ediciones-title {
-    font-size: 28px;
-  }
-
-  .edition-main-title {
-    font-size: 24px;
-  }
-
-  .edition-subtitle {
-    font-size: 20px;
-  }
-
-  .info-section {
-    padding: 20px;
-  }
-
-  .carousel-wrapper {
-    height: 300px;
-  }
-
-  .stat-number {
-    font-size: 28px;
-  }
+  .ediciones-title      { font-size: 28px; }
+  .edition-main-title   { font-size: 24px; }
+  .edition-subtitle     { font-size: 20px; }
+  .info-section         { padding: 20px; }
+  .carousel-wrapper     { height: 300px; }
+  .stat-number          { font-size: 28px; }
 }
