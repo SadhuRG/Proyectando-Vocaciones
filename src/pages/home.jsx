@@ -1,7 +1,7 @@
 import ScrollArrow from '../components/scroll_arrow';
 import { scrollToSection } from '../lib/utils';
 import '../css/welcome-home/home.css';
-import { FaLightbulb, FaHandshake, FaStar, FaInfoCircle, FaUsers, FaBullseye, FaGraduationCap } from 'react-icons/fa';
+import { FaInfoCircle, FaUsers, FaBullseye, FaGraduationCap, FaRocket, FaEye } from 'react-icons/fa';
 
 const Home = () => {
   return (
@@ -36,29 +36,34 @@ const Home = () => {
               Somos la <strong>Sección Estudiantil de Dirección de Proyectos de la Universidad Nacional de Trujillo (SEDIPRO UNT)</strong>, un equipo multidisciplinario de estudiantes comprometidos con el desarrollo y progreso de la sociedad. Promovemos y aplicamos las buenas prácticas de la gestión de proyectos basadas en los principios del <strong>Project Management Institute (PMI)</strong>, a través de actividades académicas, sociales y ambientales.
             </p>
           </div>
-          <div className="values-grid">
-            <div className="value-card">
-              <div className="value-card-icon"><FaStar /></div>
-              <div className="value-card-body">
-                <h3>Integridad</h3>
-                <p>Actuamos con ética y transparencia en cada proyecto que emprendemos.</p>
+
+          {/* Misión & Visión */}
+          <div className="qs-mv-grid">
+            <div className="mv-card">
+              <div className="mv-card-top">
+                <div className="mv-card-icon-wrap">
+                  <FaRocket className="mv-icon" />
+                </div>
+                <span className="mv-badge mv-badge--mision">Misión</span>
               </div>
+              <p className="mv-card-text">
+                Ser un equipo colaborativo que realiza proyectos locales con <strong>impacto social</strong> gracias al apoyo de alianzas sólidas con personas comprometidas y competentes.
+              </p>
             </div>
-            <div className="value-card">
-              <div className="value-card-icon"><FaLightbulb /></div>
-              <div className="value-card-body">
-                <h3>Innovación</h3>
-                <p>Buscamos soluciones creativas para transformar la orientación vocacional.</p>
+
+            <div className="mv-card mv-card--vision">
+              <div className="mv-card-top">
+                <div className="mv-card-icon-wrap mv-card-icon-wrap--light">
+                  <FaEye className="mv-icon" />
+                </div>
+                <span className="mv-badge mv-badge--vision">Visión</span>
               </div>
-            </div>
-            <div className="value-card">
-              <div className="value-card-icon"><FaHandshake /></div>
-              <div className="value-card-body">
-                <h3>Compromiso</h3>
-                <p>Nos dedicamos íntegramente al éxito y bienestar de cada estudiante.</p>
-              </div>
+              <p className="mv-card-text">
+                Ser un <strong>referente consolidado</strong> en la gestión de proyectos con impacto social de la bicentenaria Universidad Nacional de Trujillo.
+              </p>
             </div>
           </div>
+
         </div>
         <ScrollArrow onClick={() => scrollToSection('objetivos')} />
       </section>

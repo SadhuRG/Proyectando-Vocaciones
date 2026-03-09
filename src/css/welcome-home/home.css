@@ -1,6 +1,6 @@
-/* ==========================================================================
+/* 
    HOME — Todas las secciones (usa variables de sedipro-themes.css)
-   ========================================================================== */
+*/
 
 /* ---- Layout general ---- */
 .home-main {
@@ -224,6 +224,126 @@
   line-height: 1.85;
   margin: 0;
   text-align: center;
+}
+
+/* Grid Misión / Visión */
+.qs-mv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.mv-card {
+  background: var(--color-neutral-0);
+  border: 1px solid var(--color-neutral-100);
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Barra lateral izquierda — Misión */
+.mv-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background: linear-gradient(180deg, var(--color-primary-300), var(--color-accent-400));
+  border-radius: 20px 0 0 20px;
+}
+
+.mv-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(108, 45, 145, 0.1);
+}
+
+/* Variante Visión — mismos colores que Misión */
+.mv-card--vision {
+  background: var(--color-neutral-0);
+  border-color: var(--color-neutral-100);
+}
+
+.mv-card--vision::before {
+  background: linear-gradient(180deg, var(--color-primary-300), var(--color-accent-400));
+}
+
+.mv-card--vision:hover {
+  box-shadow: 0 16px 40px rgba(108, 45, 145, 0.1);
+}
+
+/* Top: ícono + badge */
+.mv-card-top {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-left: 0.75rem;
+}
+
+.mv-card-icon-wrap {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--color-accent-50), var(--color-primary-50));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mv-card-icon-wrap--light {
+  background: linear-gradient(135deg, var(--color-accent-50), var(--color-primary-50));
+  border: none;
+}
+
+.mv-icon {
+  font-size: 1.4rem;
+  color: var(--color-accent-400);
+}
+
+.mv-card--vision .mv-icon {
+  color: var(--color-accent-400);
+}
+
+.mv-badge {
+  font-family: var(--font-inter);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  padding: 0.35rem 1rem;
+  border-radius: 50px;
+}
+
+.mv-badge--mision {
+  background: linear-gradient(90deg, var(--color-accent-50), var(--color-primary-50));
+  color: var(--color-accent-400);
+}
+
+.mv-badge--vision {
+  background: linear-gradient(90deg, var(--color-accent-50), var(--color-primary-50));
+  color: var(--color-accent-400);
+}
+
+.mv-card-text {
+  font: var(--Normaltext-16px-Regular);
+  color: var(--color-neutral-700);
+  line-height: 1.8;
+  margin: 0;
+  padding-left: 0.75rem;
+}
+
+.mv-card--vision .mv-card-text {
+  color: var(--color-neutral-700);
+}
+
+.mv-card--vision .mv-card-text strong {
+  color: var(--color-secondary-400);
 }
 
 /* Grid de valores — 3 columnas iguales */
@@ -731,6 +851,11 @@
 
   .hero-subtitle {
     font-size: 1.1rem;
+  }
+
+  .qs-mv-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
   .values-grid {
