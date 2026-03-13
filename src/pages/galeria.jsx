@@ -176,11 +176,19 @@ function PolaroidsHero() {
 // Destellos de cámara — reemplazan las figuras geométricas
 function CameraSparkles() {
   const ref = useRef(null);
+
   useEffect(() => {
-    const c = ref.current; if (!c) return;
+    const c = ref.current;
+    if (!c) return;
+
     const ctx = c.getContext('2d');
     let raf, W, H;
-    const resize = () => { W = c.width = c.offsetWidth; H = c.height = c.offsetHeight; };
+
+    const resize = () => {
+      W = c.width = c.offsetWidth;
+      H = c.height = c.offsetHeight;
+    };
+
     resize();
     // Partículas tipo "bokeh" — círculos difusos, más fotográficos
     const COLORS = ['#9c15d0','#c46de8','#facf2b','#f0ab2b','#ffffff','#094a86'];
@@ -224,12 +232,18 @@ function CameraSparkles() {
         ctx.moveTo(p.x, p.y - p.r * .35); ctx.lineTo(p.x, p.y + p.r * .35);
         ctx.stroke();
       });
+
       raf = requestAnimationFrame(tick);
     };
     raf = requestAnimationFrame(tick);
     window.addEventListener('resize', resize);
-    return () => { cancelAnimationFrame(raf); window.removeEventListener('resize', resize); };
+
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('resize', resize);
+    };
   }, []);
+
   return <canvas ref={ref} className="gls-canvas" />;
 }
 
@@ -362,16 +376,16 @@ export default function Galeria() {
         <PolaroidsHero />
         {/* Overlay para asegurar legibilidad del texto central */}
         <div className="gls-hero__overlay" />
-        <div className="gls-hero__body">
-          <span className="gls-hero__eyebrow">Universidad Nacional de Trujillo · SEDIPRO</span>
-          <h1 className="gls-hero__title">
-            <span className="gls-hero__title-top">Galería</span>
-            <span className="gls-hero__title-main">Proyectando<br/>Vocaciones</span>
-          </h1>
-          <p className="gls-hero__sub">Tres ediciones · Cientos de momentos · Un propósito</p>
-          <div className="gls-hero__scroll">
-            <span>Explora las ediciones</span>
-            <div className="gls-hero__chevrons"><span/><span/><span/></div>
+          <div className="gls-hero__body">
+            <span className="gls-hero__eyebrow">Universidad Nacional de Trujillo · SEDIPRO</span>
+
+            <h1 className="gls-hero__title">
+              <span className="gls-hero__title-main">Proyectando<br/>Vocaciones</span>
+            </h1>
+            <p className="gls-hero__sub">Tres ediciones · Cientos de momentos · Un propósito</p>
+            <div className="gls-hero__scroll">
+              <span>Explora las ediciones</span>
+              <div className="gls-hero__chevrons"><span/><span/><span/></div>
           </div>
         </div>
       </header>
@@ -379,17 +393,13 @@ export default function Galeria() {
       <section className="gls-tl">
         <div className="gls-tl__intro">
           <p className="gls-tl__intro-label">Línea de tiempo</p>
-          <h2 className="gls-tl__intro-title">Selecciona una edición</h2>
+          <h2 className="gls-tl__intro-title">Explora alguna edición</h2>
         </div>
         <div className="gls-tl__body">
           <div className="gls-tl__spine" />
           {EDICIONES.map((ed, i) => (
             <EdicionCard key={ed.id} ed={ed} index={i} />
           ))}
-          <div className="gls-tl__cap">
-            <div className="gls-tl__cap-dot" />
-            <span>El origen de una tradición · 2022</span>
-          </div>
         </div>
       </section>
     </main>

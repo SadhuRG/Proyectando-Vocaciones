@@ -7,6 +7,7 @@ import {
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import { scrollToSection } from '../lib/utils';
+import logo from '../assets/SEDIPRO-UNT.png';
 
 const NAV_ITEMS = [
   { label: 'Home',            icon: <FaHome />,         type: 'section', target: 'home'          },
