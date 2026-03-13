@@ -2,7 +2,7 @@
 export const organizadoresDataPV3 = [
     {
         area: "Dirección de Proyecto",
-        description: "Liderazgo y visión estratégica de Proyectando Vocaciones 2.0",
+        description: "Liderazgo y visión estratégica de Proyectando Vocaciones 3.0",
         members: [
             {
                 id: 1,
